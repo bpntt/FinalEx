@@ -31,7 +31,7 @@ urlpatterns = [
     path('profile/', user_views.profile, name='user-profile'),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='users/login.html'), name="a-s"),
     path('logout/login/', auth_views.LoginView.as_view(template_name='users/login.html'), name="l-l"),
-    path('__debug__/', include('debug_toolbar.urls'))
+    # path('__debug__/', include('debug_toolbar.urls'))
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
