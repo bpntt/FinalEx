@@ -28,7 +28,7 @@ CSRF_COOKIE_SECURE = True
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'FinalEx.pythonanywhere.com'
+    'FinalExam.pythonanywhere.com'
 ]
 
 # Application definition
