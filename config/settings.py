@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FinalEx$default',
-        'USER': 'FinalEx',
+        'NAME': 'FinalExam$default',
+        'USER': 'FinalExam',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'FinalEx.mysql.pythonanywhere-services.com',
+        'HOST': 'FinalExam.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4'; SET sql_mode='STRICT_TRANS_TABLES' ",
             'charset': 'utf8mb4',
