@@ -2,20 +2,15 @@
 <!-- -->
 
 {% block content %}
-<div class ="container">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Add new recipe</legend>
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group py-3">
-            <input class="btn btn-outline-primary" type="submit" value="Save" />
-        </div>
-    </form>
-    <div class="border-top pt-3">
+
+<div class="form-group">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-group py-3">
+        <input class="btn btn-outline-primary" type="submit" value="Save" />
         <a class="btn btn-outline-danger" href="{% url 'recipes-home' %}">Cancel</a>
     </div>
+  </form>
 </div>
-
 {% endblock content %}

@@ -27,6 +27,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,10 +45,12 @@ INSTALLED_APPS = [
 
     # adds
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,3 +133,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'recipes-home'
 LOGIN_URl = 'user-login'
+
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'
