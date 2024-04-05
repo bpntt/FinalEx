@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,22 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECRET_KEY = 'django-insecure-dgv&-vl4d$7ew9)*mz=zo^@!x(*45co_r*e_z!74*ofi4jq+4r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'FinalEx.pythonanywhere.com'
-]
+ALLOWED_HOSTS = []
 
 # Application definition
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,12 +42,10 @@ INSTALLED_APPS = [
 
     # adds
     'crispy_forms',
-    'crispy_bootstrap4',
-    'debug_toolbar',
+    'crispy_bootstrap4'
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,15 +80,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FinalExam$default',
-        'USER': 'FinalExam',
-        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'FinalExam.mysql.pythonanywhere-services.com',
-        'OPTIONS': {
-            'init_command': "SET NAMES 'utf8mb4'; SET sql_mode='STRICT_TRANS_TABLES' ",
-            'charset': 'utf8mb4',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -135,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -145,6 +128,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'recipes-home'
 LOGIN_URl = 'user-login'
-
-MEDIA_ROOT = BASE_DIR/'media'
-MEDIA_URL = '/media/'
