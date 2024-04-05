@@ -1,13 +1,12 @@
 {% extends 'recipes/base.html' %}
 <!-- -->
 {% block content %}
-<h1>Recipes App Home</h1>
+<h1>Recipes Home</h1>
 {% for recipe in recipes %}
 <div class="card my-4" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">{{recipe.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{recipe.author}}</h6>
-        <p class="card-text">{{recipe.description}}</p>
         <h6 class="card-subtitle mb-2 text-muted">{{recipe.updated_at|date:'F d, Y'}}</h6>
         <a class="btn btn-outline-info" href="{% url 'recipes-detail' recipe.pk %}" >View Recipe</a>
     </div>
